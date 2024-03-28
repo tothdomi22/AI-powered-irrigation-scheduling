@@ -37,12 +37,12 @@ print(f'R^2: {r2}')
 
 # Új manuálisan beállított adatok eltárolása
 manual_data_df = pd.DataFrame([[80, 50, 20]], columns=['Soil_Moisture', 'Humidity', 'Temperature'])
-# Ez a manuális adat skálázása
+# Ez a manuális adat mérétezése
 manual_data_scaled = scaler.transform(manual_data_df)
 # Majd predikciója
 predicted_hours_manual = model.predict(manual_data_scaled)
 
-# A CSV fájl utolsó sorának skálázása
+# A CSV fájl utolsó sorának mérétezése
 latest_data_scaled = scaler.transform(latest_data_row)
 # Majd ennek is a predikciója
 predicted_hours = model.predict(latest_data_scaled)
